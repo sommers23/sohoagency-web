@@ -32,71 +32,37 @@ export default function GetStartedPage() {
       } else {
         setStatus('Something went wrong. Please try again.')
       }
-    } catch (error) {
+    } catch {
       setStatus('Submission failed.')
     }
   }
 
   return (
     <div className="min-h-screen bg-white py-20 px-6 text-center">
-      <h1 className="text-4xl font-bold text-purple-600 mb-4">TRANSFORM YOUR E-COMMERCE</h1>
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">PERFORMANCE TODAY</h2>
-      <p className="max-w-xl mx-auto mb-8 text-gray-700">
-        Ready to see real results? Our streamlined onboarding process makes it easy to harness the power of AI
-        for your e-commerce business. No technical knowledge required—just bring your business goals, and
-        we’ll handle the rest.
+      <h1 className="text-4xl font-bold text-purple-600 mb-2">TRANSFORM YOUR E-COMMERCE</h1>
+      <h2 className="text-2xl font-semibold mb-4">PERFORMANCE TODAY</h2>
+      <p className="mb-8 max-w-xl mx-auto">
+        Ready to see real results? Our streamlined onboarding process makes it easy to harness the power of AI for your e-commerce business. No technical knowledge required—just bring your business goals, and we'll handle the rest.
       </p>
-
-      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Full Name"
-            required
-            className="border border-gray-300 rounded px-4 py-2 w-full"
-          />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            required
-            className="border border-gray-300 rounded px-4 py-2 w-full"
-          />
-          <input
-            type="text"
-            name="website"
-            value={formData.website}
-            onChange={handleChange}
-            placeholder="Business Website"
-            required
-            className="border border-gray-300 rounded px-4 py-2 w-full"
-          />
-          <select
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            required
-            className="border border-gray-300 rounded px-4 py-2 w-full bg-white"
-          >
+      <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
+        <div className="flex space-x-4">
+          <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Full Name" className="w-1/2 px-4 py-2 border rounded" />
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="Email" className="w-1/2 px-4 py-2 border rounded" />
+        </div>
+        <div className="flex space-x-4">
+          <input type="text" name="website" value={formData.website} onChange={handleChange} required placeholder="Business Website" className="w-1/2 px-4 py-2 border rounded" />
+          <select name="country" value={formData.country} onChange={handleChange} required className="w-1/2 px-4 py-2 border rounded">
             <option value="">Select Country</option>
             <option value="UAE">UAE</option>
-            <option value="UK">UK</option>
             <option value="USA">USA</option>
+            <option value="UK">UK</option>
             <option value="Other">Other</option>
           </select>
         </div>
-        <button
-          type="submit"
-          className="w-full bg-purple-600 text-white py-3 rounded hover:bg-purple-700 transition"
-        >
+        <button type="submit" className="w-full bg-purple-600 text-white py-3 rounded hover:bg-purple-700 transition">
           Start Your Free Assessment →
         </button>
-        {status && <p className="text-center text-sm text-green-600 mt-4">{status}</p>}
+        {status && <p className="text-center text-green-600 mt-2">{status}</p>}
       </form>
     </div>
   )
