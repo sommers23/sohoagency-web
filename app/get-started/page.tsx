@@ -27,7 +27,7 @@ export default function GetStartedPage() {
       })
 
       if (response.ok) {
-        setStatus('Thank you! We'll be in touch shortly.')
+        setStatus('Thank you! We\'ll be in touch shortly.')
         setFormData({ name: '', email: '', website: '', country: '' })
       } else {
         setStatus('Something went wrong. Please try again.')
